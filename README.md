@@ -1,7 +1,5 @@
 # ExpandedCooking
 
-![Untitled design](https://github.com/s5y-ux/ExpandedCooking/assets/59636597/a9832bc8-6660-41e8-8149-fadcce15cbd0)
-
 https://github.com/s5y-ux/ExpandedCooking/assets/59636597/c8a81e38-560d-44ca-b7fd-cb2c57174dfe
 
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.20+-brightgreen.svg)
