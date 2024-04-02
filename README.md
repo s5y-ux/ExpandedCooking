@@ -1,5 +1,7 @@
 # ExpandedCooking
-
+![Minecraft](https://img.shields.io/badge/Minecraft-1.20+-brightgreen.svg)
+![Spigot](https://img.shields.io/badge/Spigot-1.20.2-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ## Package net.ddns.vcccd
 
 This package contains classes related to cooking, leveling up cooking experience, and consuming food in a Minecraft Bukkit server.
