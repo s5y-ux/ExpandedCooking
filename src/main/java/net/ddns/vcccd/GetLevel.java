@@ -1,10 +1,11 @@
 package net.ddns.vcccd;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class GetLevel implements CommandExecutor {
 
@@ -25,7 +26,9 @@ private final Main main;
 
 	    try {
 	        PlayerData playerData = new PlayerData(main, player);
-	        player.sendMessage(Integer.toString(playerData.getCookingEXP()));
+	        String Level = ChatColor.GREEN + Integer.toString(playerData.getCookingEXP());
+	        player.sendMessage("Your Cooking Expierence Amounts To: " + Level);
+	        player.sendMessage(playerData.getCookQuality());
 	        }
 	    catch (Exception e) {
 	        sender.sendMessage("An error occurred while setting cooking experience. Please try again later.");

@@ -11,3 +11,7 @@ commands:
       description: Gets the executors cooking exp
       usage: /<command>
       permission: ExpandedCooking.getEXP
+   admindatabase:
+      description: Gets Database info
+      usage: /<command>
+      permission: ExpandedCooking.admin

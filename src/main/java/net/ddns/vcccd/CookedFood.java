@@ -15,14 +15,13 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
-
 
 public class CookedFood implements Listener{
 	private final Main main;
@@ -71,17 +70,21 @@ public class CookedFood implements Listener{
 		PlayerData ourPlayerData = new PlayerData(main, player);
 		int Calculation = ourPlayerData.getCookingEXP() + (EXPData.getFoodExp(event.getItemType()) * event.getItemAmount());
 		ourPlayerData.setCookingExp(Calculation);
-		player.sendMessage("You have " + ChatColor.GREEN + Integer.toString(Calculation) + ChatColor.WHITE + " Cooking EXP!");
+		String message = "+" + ChatColor.translateAlternateColorCodes('&', "&e&l") + (EXPData.getFoodExp(event.getItemType()) * event.getItemAmount()) + ChatColor.translateAlternateColorCodes('&', "&e") + " Cooking Exp...";
+		player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(message));
 		player.playSound(player, Sound.BLOCK_FIRE_EXTINGUISH, 100, 100);
 	}
 	
 	@EventHandler
 	public void FurnaceInteract(PlayerInteractEvent event) {
+		try {
 		Player player = event.getPlayer();
 		Block furnaceBlock = event.getClickedBlock();
 		if (furnaceBlock.getState() instanceof Furnace) {
             Furnace furnace = (Furnace) furnaceBlock.getState();
             furnaceInteractions.put(furnace.getLocation(), player);
+	}} catch (Exception e) {
+		assert true;
 	}
 	}
 		
