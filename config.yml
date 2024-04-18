@@ -1,9 +1,109 @@
+#====================
+# Effects:
+#   poison -> Poison effect
+#   fireResistance -> Fire Resistance effect 
+#   protection -> Damage resistance effect 
+#   regeneration -> Regeneration effect
+#   luck -> Fortune effect    
+#
+#====================
+
+#Use your own effects
+UseCustomEffects: false
+
+#Time in seconds
+EffectsTime: 5
+
+#----------------
+#  Food Qualities
+#  & Effects
+#----------------
+
 HomemadeEXP: 960
+HomemadeEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+
 TastyEXP: 1920
+TastyEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 DelusciousEXP: 2880
+DelusciousEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 GourmetEXP: 4800
+GourmetEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 RestaurantQualityEXP: 6720
+RestaurantQualityEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 OneStarEXP: 9600
+OneStarEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 TwoStarEXP: 12480
+TwoStarEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
 ThreeStarEXP: 16320
-LedgendaryEXP: 30000
+ThreeStarEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+  
+LegendaryEXP: 30000
+LegendaryEffects:
+  - poison
+  - fireResistance
+  - protection
+  - regeneration
+  - luck
+
+#===================================================
+#    ______                           __         __
+#   / ____/  ______  ____ _____  ____/ /__  ____/ /
+#  / __/ | |/_/ __ \/ __ `/ __ \/ __  / _ \/ __  / 
+# / /____>  </ /_/ / /_/ / / / / /_/ /  __/ /_/ /  
+#/_____/_/|_/ .___/\__,_/_/ /_/\__,_/\___/\__,_/   
+#       ___/_/            __   _                   
+#      / ____/___  ____  / /__(_)___  ____ _       
+#     / /   / __ \/ __ \/ //_/ / __ \/ __ `/       
+#    / /___/ /_/ / /_/ / ,< / / / / / /_/ /        
+#    \____/\____/\____/_/|_/_/_/ /_/\__, /         
+#                                  /____/     
+#
+#  A plugin Authored by: s5y    
+#
+#=================================================== 

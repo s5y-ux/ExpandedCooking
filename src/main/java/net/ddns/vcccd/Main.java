@@ -6,6 +6,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
@@ -24,15 +28,44 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		FileConfiguration config = this.getConfig();
+		
+        Map<String, List<String>> effectsMap = new HashMap<>();
+        
+        String[] categories = {"Homemade", "Tasty", "Deluscious", "Gourmet", "RestaurantQuality", "OneStar", "TwoStar", "ThreeStar", "Ledgendary"};
+        
+        for (String category : categories) {
+            effectsMap.put(category, new ArrayList<>());
+        }
+        
+        String[] effectValues = {"poison", "fireResistance", "protection", "regeneration", "luck"};
+        
+        for (String category : categories) {
+            List<String> effectsList = effectsMap.get(category);
+            for (String value : effectValues) {
+                effectsList.add(value);
+            }
+        }
+		
+        config.addDefault("UseCustomEffects", false);
+		config.addDefault("EffectsTime", 5);
 		config.addDefault("HomemadeEXP", 960);
+		config.addDefault("HomemadeEffects", effectsMap.get("Homemade"));
 		config.addDefault("TastyEXP", 1920);
+		config.addDefault("TastyEffects", effectsMap.get("Tasty"));
 		config.addDefault("DelusciousEXP", 2880);
+		config.addDefault("DelusciousEffects", effectsMap.get("Deluscious"));
 		config.addDefault("GourmetEXP", 4800);
+		config.addDefault("GourmetEffects", effectsMap.get("Gourmet"));
 		config.addDefault("RestaurantQualityEXP", 6720);
+		config.addDefault("RestaurantQualityEffects", effectsMap.get("RestaurantQuality"));
 		config.addDefault("OneStarEXP", 9600);
+		config.addDefault("OneStarEffects", effectsMap.get("OneStar"));
 		config.addDefault("TwoStarEXP", 12480);
+		config.addDefault("TwoStarEffects", effectsMap.get("TwoStar"));
 		config.addDefault("ThreeStarEXP", 16320);
-		config.addDefault("LedgendaryEXP", 30000);
+		config.addDefault("ThreeStarEffects", effectsMap.get("ThreeStar"));
+		config.addDefault("LegendaryEXP", 30000);
+		config.addDefault("LegendaryEffects", effectsMap.get("Ledgendary"));
 		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(new CookedFood(this), this);
 		getServer().getPluginManager().registerEvents(new EatFood(this), this);
