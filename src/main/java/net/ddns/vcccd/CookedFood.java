@@ -1,6 +1,7 @@
 package net.ddns.vcccd;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.Furnace;
@@ -31,6 +32,15 @@ public class CookedFood implements Listener{
 		this.main = main;
 	}
 	
+	private boolean binarySearch(Material[] materialList, Material item) {
+		for(Material mat: materialList) {
+			if(mat.equals(item)) {
+				return(true);
+			}
+		}
+		return(false);
+	}
+	
 	private Map<Location, Player> furnaceInteractions = new HashMap<>();
 
 	@EventHandler
@@ -46,6 +56,9 @@ public class CookedFood implements Listener{
 	@EventHandler
     public void onFurnaceSmelt(FurnaceSmeltEvent event) {
     	try {
+    	
+    		if(binarySearch(this.EXPData.Foods, event.getResult().getType())) {
+   
     	Block furnaceBlock = event.getBlock();
         Location furnaceLocation = furnaceBlock.getLocation();
     	Player player = furnaceInteractions.get(furnaceLocation);
@@ -56,7 +69,9 @@ public class CookedFood implements Listener{
         Lore.add(ourPlayer.getCookQuality());
         Lore.add(ourPlayer.getChef());
         resultItemMeta.setLore(Lore);
-        resultItem.setItemMeta(resultItemMeta); }
+        resultItem.setItemMeta(resultItemMeta);
+    		}
+    		}
     	catch (Exception e) {
     		event.setCancelled(true);
     	}

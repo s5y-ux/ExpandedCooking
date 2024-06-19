@@ -20,6 +20,7 @@ public class Main extends JavaPlugin{
 	
 	private Connection publicConnection;
 	private ConsoleCommandSender console = getServer().getConsoleSender();
+	private String prefix = ChatColor.translateAlternateColorCodes('&', "&f[&eExpanded Cooking&f] - ");
 	
 	public Connection getPublicConnection() {
 		return(this.publicConnection);
@@ -69,6 +70,7 @@ public class Main extends JavaPlugin{
 		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(new CookedFood(this), this);
 		getServer().getPluginManager().registerEvents(new EatFood(this), this);
+		getServer().getPluginManager().registerEvents(new UpdateChecker(), this);
 		this.getCommand("setcookingexp").setExecutor(new ChangeLevel(this));
 		this.getCommand("getcookingexp").setExecutor(new GetLevel(this));
 		this.getCommand("admindatabase").setExecutor(new Admin(this));
@@ -77,21 +79,21 @@ public class Main extends JavaPlugin{
 		if(!rootDirectory.exists()) {
 			try {
 				if(rootDirectory.createNewFile()) {
-					console.sendMessage("File path created, no errors!");
+					console.sendMessage(prefix + "File path created, no errors!");
 				} else {
-					console.sendMessage("An error occured when creating directory");
+					console.sendMessage(prefix + ChatColor.RED + "An error occured when creating directory, message the developer.");
 				}
 			} catch (IOException e) {
-				console.sendMessage(ChatColor.RED + "FATAL ERROR! Can't even check for database file existance!");
+				console.sendMessage(prefix + ChatColor.RED + "FATAL ERROR! Can't even check for database file existance! Jesus...");
 			}
 		}
 		
 		try {
 			Connection conn = DriverManager.getConnection("jdbc:sqlite:" + "plugins/ExpandedCooking/PlayerData.db");
 			this.publicConnection = conn;
-			console.sendMessage(ChatColor.YELLOW + "Connected to Database successfully!");
+			console.sendMessage(prefix + ChatColor.YELLOW + "Connected to Database successfully!");
 		} catch (SQLException e) {
-			console.sendMessage(ChatColor.RED + "Database machine broke...");
+			console.sendMessage(prefix + ChatColor.RED + "Database machine broke... (onEnable) nag the developer!");
 		}
 		
 		Statement statement;
@@ -114,7 +116,7 @@ public class Main extends JavaPlugin{
 		try {
 			this.publicConnection.close();
 		} catch (SQLException e) {
-			console.sendMessage(ChatColor.RED + "Problem disabling database in onDisable");
+			console.sendMessage(prefix + ChatColor.RED + "Problem disabling database in onDisable");
 		}
 	}
 	

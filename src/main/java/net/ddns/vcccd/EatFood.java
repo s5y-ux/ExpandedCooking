@@ -32,6 +32,7 @@ public class EatFood implements Listener {
 	
 	@EventHandler
 		public void onPlayerEat(PlayerItemConsumeEvent event) {
+		try {
 			ItemStack eatenItem = event.getItem();
 			ItemMeta eatenItemMeta = eatenItem.getItemMeta();
 			List<String> Lore = eatenItemMeta.getLore();
@@ -141,5 +142,8 @@ public class EatFood implements Listener {
 
 			
 			
+		} catch (Exception e) {
+			assert true;
 		}
+	}
 }
