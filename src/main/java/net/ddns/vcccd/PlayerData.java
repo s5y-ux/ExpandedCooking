@@ -54,25 +54,27 @@ public class PlayerData {
 				int legendaryExp = main.getConfig().getInt("LegendaryEXP");
 
 				if (this.CookingEXP < homemadeExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &lBasically Cardboard");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("CardboardQualityName"));
 				} else if (this.CookingEXP >= homemadeExp && this.CookingEXP < tastyExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &2Home-Made");
+				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("HomemadeQualityName"));
 				} else if (this.CookingEXP >= tastyExp && this.CookingEXP < delusciousExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &6Tasty");
+				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " +  main.getConfig().getString("TastyQualityName"));
 				} else if (this.CookingEXP >= delusciousExp && this.CookingEXP < gourmetExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &eDeluscious");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("DelusciousQualityName"));
 				} else if (this.CookingEXP >= gourmetExp && this.CookingEXP < restaurantQualityExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &bGourmet");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("GourmetQualityName"));
 				} else if (this.CookingEXP >= restaurantQualityExp && this.CookingEXP < oneStarExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &9Restaurant Quality");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("RestaurantQualityName"));
 				} else if (this.CookingEXP >= oneStarExp && this.CookingEXP < twoStarExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &3One Star");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("OneStarQualityName"));
 				} else if (this.CookingEXP >= twoStarExp && this.CookingEXP < threeStarExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &3Two Star");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("TwoStarQualityName"));
 				} else if (this.CookingEXP >= threeStarExp && this.CookingEXP < legendaryExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &5Three Star");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("ThreeStarQualityName"));
 				} else if (this.CookingEXP >= legendaryExp) {
-				    this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: &6Ledgendary");
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("LegendaryQualityName"));
+				} else {
+					this.CookQuality = ChatColor.translateAlternateColorCodes('&', "&8Quality: " + main.getConfig().getString("CardboardQualityName"));
 				}
 				resultSet.close();
 			    sqlExecutors.close();

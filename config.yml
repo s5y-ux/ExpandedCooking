@@ -1,3 +1,20 @@
+#===================================================
+#    ______                           __         __
+#   / ____/  ______  ____ _____  ____/ /__  ____/ /
+#  / __/ | |/_/ __ \/ __ `/ __ \/ __  / _ \/ __  / 
+# / /____>  </ /_/ / /_/ / / / / /_/ /  __/ /_/ /  
+#/_____/_/|_/ .___/\__,_/_/ /_/\__,_/\___/\__,_/   
+#       ___/_/            __   _                   
+#      / ____/___  ____  / /__(_)___  ____ _       
+#     / /   / __ \/ __ \/ //_/ / __ \/ __ `/       
+#    / /___/ /_/ / /_/ / ,< / / / / / /_/ /        
+#    \____/\____/\____/_/|_/_/_/ /_/\__, /         
+#                                  /____/     
+#
+#  A plugin Authored by: s5y    
+#
+#=================================================== 
+
 #====================
 # Effects:
 #   poison -> Poison effect
@@ -19,6 +36,8 @@ EffectsTime: 5
 #  & Effects
 #----------------
 
+CardboardQualityName: "&lBasically Cardboard"
+
 HomemadeEXP: 960
 HomemadeEffects:
   - poison
@@ -26,6 +45,7 @@ HomemadeEffects:
   - protection
   - regeneration
   - luck
+HomemadeQualityName: "&aHome-Made"
 
 TastyEXP: 1920
 TastyEffects:
@@ -34,6 +54,7 @@ TastyEffects:
   - protection
   - regeneration
   - luck
+TastyQualityName: "&6Tasty"
   
 DelusciousEXP: 2880
 DelusciousEffects:
@@ -42,7 +63,8 @@ DelusciousEffects:
   - protection
   - regeneration
   - luck
-  
+DelusciousQualityName: "&eDeluscious"
+
 GourmetEXP: 4800
 GourmetEffects:
   - poison
@@ -50,7 +72,8 @@ GourmetEffects:
   - protection
   - regeneration
   - luck
-  
+GourmetQualityName: "&bGourmet"
+
 RestaurantQualityEXP: 6720
 RestaurantQualityEffects:
   - poison
@@ -58,6 +81,7 @@ RestaurantQualityEffects:
   - protection
   - regeneration
   - luck
+RestaurantQualityName: "&9Restaurant Quality"
   
 OneStarEXP: 9600
 OneStarEffects:
@@ -66,6 +90,7 @@ OneStarEffects:
   - protection
   - regeneration
   - luck
+OneStarQualityName: "&3One Star"
   
 TwoStarEXP: 12480
 TwoStarEffects:
@@ -74,7 +99,8 @@ TwoStarEffects:
   - protection
   - regeneration
   - luck
-  
+TwoStarQualityName: "&3Two Star"  
+
 ThreeStarEXP: 16320
 ThreeStarEffects:
   - poison
@@ -82,6 +108,7 @@ ThreeStarEffects:
   - protection
   - regeneration
   - luck
+ThreeStarQualityName: "&5Three Star"
   
 LegendaryEXP: 30000
 LegendaryEffects:
@@ -90,20 +117,4 @@ LegendaryEffects:
   - protection
   - regeneration
   - luck
-
-#===================================================
-#    ______                           __         __
-#   / ____/  ______  ____ _____  ____/ /__  ____/ /
-#  / __/ | |/_/ __ \/ __ `/ __ \/ __  / _ \/ __  / 
-# / /____>  </ /_/ / /_/ / / / / /_/ /  __/ /_/ /  
-#/_____/_/|_/ .___/\__,_/_/ /_/\__,_/\___/\__,_/   
-#       ___/_/            __   _                   
-#      / ____/___  ____  / /__(_)___  ____ _       
-#     / /   / __ \/ __ \/ //_/ / __ \/ __ `/       
-#    / /___/ /_/ / /_/ / ,< / / / / / /_/ /        
-#    \____/\____/\____/_/|_/_/_/ /_/\__, /         
-#                                  /____/     
-#
-#  A plugin Authored by: s5y    
-#
-#=================================================== 
+LegendaryQualityName: "&6Ledgendary"

@@ -67,6 +67,16 @@ public class Main extends JavaPlugin{
 		config.addDefault("ThreeStarEffects", effectsMap.get("ThreeStar"));
 		config.addDefault("LegendaryEXP", 30000);
 		config.addDefault("LegendaryEffects", effectsMap.get("Ledgendary"));
+		config.addDefault("HomemadeQualityName", "&aHome-Made");
+		config.addDefault("CardboardQuality", "&lBasically Cardboard");
+		config.addDefault("TastyQualityName", "&6Tasty");
+		config.addDefault("DelusciousQualityName", "&eDeluscious");
+		config.addDefault("GourmetQualityName", "&bGourmet");
+		config.addDefault("RestaurantQualityName", "&9Restaurant Quality");
+		config.addDefault("OneStarQualityName", "&3One Star");
+		config.addDefault("TwoStarQualityName", "&3Two Star");
+		config.addDefault("ThreeStarQualityName", "&5Three Star");
+		config.addDefault("LegendaryQualityName", "&6Ledgendary");
 		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(new CookedFood(this), this);
 		getServer().getPluginManager().registerEvents(new EatFood(this), this);
